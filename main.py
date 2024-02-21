@@ -18,11 +18,11 @@ def next_turn(row, column):
 
         # Check for a winner or tie game
         if check_winner() is False:
-            player = players[1] if player == players[0] else players[0]
-            label.config(text=("Player: " + players[0] if player == players[1] else players[1]))
+            player = players[0] if player == players[1] else players[1]
+            label.config(text=("Player: " + players[1] if player == players[1] else "Player: " + players[0]))
 
         elif check_winner() is True:
-            label.config(text=(players[0] + " WINS"))
+            label.config(text=(player + " WINS"))
 
         elif check_winner() == "TIE":
             label.config(text="TIE!")
